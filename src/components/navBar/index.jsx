@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css'; 
+import CartWidget from '../cartWidget';
 
 const NavbarComponent = () => {
   return (
@@ -16,6 +17,9 @@ const NavbarComponent = () => {
             <a href="#" style={{color:"white"}}>Contacto</a>
           </li>
         </ul>
+        <div style={{float:"right"}}>
+        <CartWidget/>
+        </div>  
       </nav>
       </>
     
