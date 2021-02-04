@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ItemCountComponent = ({stock, sumar, contador, resta }) => {
+const ItemCountComponent = ({stock, sumar, contador, resta, agregarAlCarrito }) => {
     return (
       <>
         <div style={{marginLeft:100}}>
@@ -11,7 +11,7 @@ const ItemCountComponent = ({stock, sumar, contador, resta }) => {
             <button onClick={() => {sumar (stock)}}>+</button>
         </div>
         <div style={{marginLeft:50, marginTop:20}}>
-            <button> Agregar al Carrito </button>
+            <button onClick={agregarAlCarrito}> Agregar al Carrito </button>
         </div>
       </>
     )

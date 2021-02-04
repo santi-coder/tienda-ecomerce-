@@ -24,9 +24,13 @@ const ItemListContainerComponent = (props) => {
 
     }
 
+    const agregarAlCarrito = () =>{
+        alert("se agrago el producto al carrito");
+    }
+
     return (
         <>
-            <ItemCountComponent stock={5} contador={contador} sumar={sumar} resta={resta} />
+            <ItemCountComponent stock={5} contador={contador} sumar={sumar} resta={resta} agregarAlCarrito={agregarAlCarrito} />
             <p style={{color:"red", fontSize:50}}>hola como estas, bienvenido a: {props.curso} espero aprendas {props.cantidad}</p>
             
         </>
