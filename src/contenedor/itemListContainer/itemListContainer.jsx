@@ -1,5 +1,8 @@
 import React from 'react' 
 import ItemCountComponent from '../../components/itemCount'
+import productList from '../../components/mocks/productList'
+import ItemList from './itemList'
+
 
 
 
@@ -28,10 +31,28 @@ const ItemListContainerComponent = (props) => {
         alert("se agrago el producto al carrito");
     }
 
+
+    /*Desafio clase 6*/
+
+    const [products, setProducts] = React.useState([]);    
+    
+React.useEffect(() =>{
+    const myPromise= new Promise((resolve, reject) => {
+        setTimeout(()=> resolve(productList), 2000);
+    });
+
+    myPromise.then ((result)=> setProducts (result));
+
+}, []);
+
+
+
+
     return (
         <>
             <ItemCountComponent stock={5} contador={contador} sumar={sumar} resta={resta} agregarAlCarrito={agregarAlCarrito} />
             <p style={{color:"red", fontSize:50}}>hola como estas, bienvenido a: {props.curso} espero aprendas {props.cantidad}</p>
+            <ItemList products={products}/>
             
         </>
     )

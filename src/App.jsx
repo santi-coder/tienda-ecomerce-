@@ -5,12 +5,14 @@ import ItemListContainerComponent from './contenedor/itemListContainer/itemListC
 
 
 
+
+
 const App = () => {
   return (
     <>
     <NavbarComponent/>
     <ItemListContainerComponent curso="react " cantidad=" mucho"/>
-     
+    
     </>
   );
 }
