@@ -1,17 +1,21 @@
-import React from 'react'
+/*import React from 'react'
+
 
 const Item = ({product}) => {
+    
+
+    
     return (
         <div>
             <h3>{product.title}</h3>
             <p>Color: {product.color}</p>
             <p>Precio: $ {product.price}</p>
-            <image src= {product.foto}/>
-
-
-            
+            <img src={product.foto} style={{width:40, height:40}}></img>
+            <button>Ver detalle de producto</button>    
         </div>
+    
+    
     );
 };
 
-export default Item
+export default Item*/

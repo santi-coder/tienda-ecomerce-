@@ -1,11 +1,14 @@
-import Item from "../../components/item/item";
+/*import Item from "../../components/item/item";
 
 const ItemList =({products}) => {
+      
+    
+    
     return (
     <div>
         
             {products.map((product)=>{
-                return <Item key={product.id} product={product} />;
+                return <Item key={product.id} product={product}/>;
 
             })}
     
@@ -14,4 +17,4 @@ const ItemList =({products}) => {
     );
 };
 
-export default ItemList
+export default ItemList*/
