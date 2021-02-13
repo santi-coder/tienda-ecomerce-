@@ -1,4 +1,4 @@
-/*import React from 'react'
+import React from 'react'
 
 
 const Item = ({product}) => {
@@ -18,4 +18,4 @@ const Item = ({product}) => {
     );
 };
 
-export default Item*/
+export default Item

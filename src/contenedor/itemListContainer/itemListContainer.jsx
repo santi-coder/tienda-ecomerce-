@@ -1,7 +1,8 @@
 import React from 'react' 
 import ItemCountComponent from '../../components/itemCount'
-/*import productList from '../../components/mocks/productList' */
+import productList from '../../components/mocks/productList' 
 import ItemList from './itemList'
+
 
 
 
@@ -34,7 +35,7 @@ const ItemListContainerComponent = (props) => {
 
     /*Desafio clase 6*/
 
-   /* const [products, setProducts] = React.useState([]);    
+    const [products, setProducts] = React.useState([]);    
     
 React.useEffect(() =>{
     const myPromise= new Promise((resolve, reject) => {
@@ -43,7 +44,7 @@ React.useEffect(() =>{
 
     myPromise.then ((result)=> setProducts (result));
 
-}, []);*/
+}, []);
 
 
 

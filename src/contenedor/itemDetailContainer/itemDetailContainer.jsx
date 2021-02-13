@@ -1,23 +1,31 @@
 import React from 'react'
 import ItemDetail from '../../components/itemDetail/itemDetail';
+import productList from '../../components/mocks/productList';
+
 
 const ItemDetailContainer = () => {
-    
-    const [products, setProducts] = React.useState([]);    
-    
-React.useEffect(() =>{
-    const myPromise= new Promise((resolve, reject) => {
-        setTimeout(()=> resolve(productList), 2000);
-    });
 
-    myPromise.then ((result)=> setProducts (result));
-
-}, []);
+    const [producto, setProducto] = React.useState([]);
     
-    return (
-        <ItemDetail products={products}/>
-    )
+    React.useEffect(() => {
+        const detailPromise= new Promise ((resolve, reject)=>{
+            setTimeout(()=> resolve(productList),5000);
+        });
+
+        detailPromise.then ((result)=> setProducto (result));
+    }, []);
+    
+   
+//  console.log(producto)
+        
+ const unProducto = producto.find (element => element.id === 1);
+    //  console.log(unProducto)
+         
+   
+    return <ItemDetail unProducto={unProducto} />
+            
+        
+    
 }
 
 export default ItemDetailContainer
-

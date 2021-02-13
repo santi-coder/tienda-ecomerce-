@@ -1,4 +1,4 @@
-/*import Item from "../../components/item/item";
+import Item from "../../components/item/item";
 
 const ItemList =({products}) => {
       
@@ -17,4 +17,4 @@ const ItemList =({products}) => {
     );
 };
 
-export default ItemList*/
+export default ItemList
