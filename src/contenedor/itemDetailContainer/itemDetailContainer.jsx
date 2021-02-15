@@ -9,23 +9,16 @@ const ItemDetailContainer = () => {
     
     React.useEffect(() => {
         const detailPromise= new Promise ((resolve, reject)=>{
-            setTimeout(()=> resolve(productList),5000);
+            setTimeout(()=> resolve(productList),3000);
         });
 
-        detailPromise.then ((result)=> setProducto (result));
-    }, []);
+        detailPromise.then (function (result) { 
+            const unProducto = result.find (element => element.id === 1);
+            setProducto (unProducto)
+        }
+    )}, []);
     
-   
-//  console.log(producto)
-        
- const unProducto = producto.find (element => element.id === 1);
-    //  console.log(unProducto)
-         
-   
-    return <ItemDetail unProducto={unProducto} />
-            
-        
-    
+    return <ItemDetail producto={producto} />
 }
 
 export default ItemDetailContainer
