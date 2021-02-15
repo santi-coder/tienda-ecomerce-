@@ -2,8 +2,6 @@ import Item from "../../components/item/item";
 
 const ItemList =({products}) => {
       
-    
-    
     return (
     <div>
         

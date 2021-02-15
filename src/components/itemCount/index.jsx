@@ -1,7 +1,14 @@
 import React from 'react'
 
 const ItemCountComponent = ({stock, sumar, contador, resta, agregarAlCarrito }) => {
-    return (
+    
+  
+  
+  
+  
+  
+  
+  return (
       <>
         <div style={{marginLeft:100}}>
             <button onClick={resta}>-</button>

@@ -17,8 +17,18 @@ const ItemDetailContainer = () => {
             setProducto (unProducto)
         }
     )}, []);
+
+
+
+
+ 
+
+
+
     
     return <ItemDetail producto={producto} />
+    
+    
 }
 
 export default ItemDetailContainer

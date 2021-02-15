@@ -18,7 +18,9 @@ const ItemDetail = ({producto}) => {
                 <p>Forma de pago: {producto.formaDePago}</p>
                 <h3>Precio: $ {producto.price}</h3>
             </div>
-        
+            <div>
+                
+            </div>
         </div>
         
     );

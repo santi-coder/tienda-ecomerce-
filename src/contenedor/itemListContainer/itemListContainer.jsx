@@ -33,7 +33,7 @@ const ItemListContainerComponent = (props) => {
     }
 
 
-    /*Desafio clase 6*/
+//     /*Desafio clase 6*/
 
     const [products, setProducts] = React.useState([]);    
     
@@ -45,8 +45,6 @@ React.useEffect(() =>{
     myPromise.then ((result)=> setProducts (result));
 
 }, []);
-
-
 
 
     return (

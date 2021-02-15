@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import NavbarComponent from './components/navBar/';
 import ItemListContainerComponent from './contenedor/itemListContainer/itemListContainer';
 import ItemDetailContainer from './contenedor/itemDetailContainer/itemDetailContainer';
-
+import {BrowserRouter, Switch, Route} from 'react-router-dom'; 
 
 
 const App = () => {
@@ -13,11 +13,26 @@ const App = () => {
  
   return (
     
-    <>
+    
+    <BrowserRouter>
+      
       <NavbarComponent/>
-      <ItemListContainerComponent curso="react " cantidad=" mucho"/>
-      <ItemDetailContainer/>
-    </>
+      
+      <Switch>
+        
+        <Route exact path="/">
+          <ItemListContainerComponent curso="react " cantidad=" mucho"/>  
+	      </Route>
+
+        <Route exact path="/detalle/:categoryId">
+          <ItemDetailContainer/>
+        </Route>
+    
+      </Switch>
+
+      <footer> <h1> hola soy el footer </h1> </footer>    
+    
+    </BrowserRouter>
   );
 }
 

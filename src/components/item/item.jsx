@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {Link} from 'react-router-dom';
 
 const Item = ({product}) => {
     
@@ -11,7 +11,7 @@ const Item = ({product}) => {
             <p>Color: {product.color}</p>
             <p>Precio: $ {product.price}</p>
             <img src={product.foto} style={{width:40, height:40}}></img>
-            <button>Ver detalle de producto</button>    
+            <Link to={`/detalle`}> <button>Ver detalle de producto</button> </Link>   
         </div>
     
     
