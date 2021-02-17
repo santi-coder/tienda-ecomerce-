@@ -24,7 +24,7 @@ const App = () => {
           <ItemListContainerComponent curso="react " cantidad=" mucho"/>  
 	      </Route>
 
-        <Route exact path="/detalle/:categoryId">
+        <Route exact path="/detalle/:id">
           <ItemDetailContainer/>
         </Route>
     

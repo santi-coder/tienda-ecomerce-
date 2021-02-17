@@ -1,14 +1,31 @@
 import React from 'react'
 
-const ItemCountComponent = ({stock, sumar, contador, resta, agregarAlCarrito }) => {
+const ItemCountComponent = ({stock, agregarAlCarrito }) => {
     
+  const [contador, setContador] = React.useState (1)
+
+    const sumar = (stock) => {
+        if (contador<stock){
+            setContador (contador+1);
+        }else { console.log("nos quedamos sin estock ")
+
+        }
+    }
+
+    const resta = () =>{
+        if (contador > 1){
+            setContador (contador - 1);
+        }else {
+            console.log("no podemos vender productos negativos")
+        }
+
+    }
+
+   const handlerAgregarAlCarrito = () =>{
+    agregarAlCarrito(contador);
+   }
   
-  
-  
-  
-  
-  
-  return (
+ return (
       <>
         <div style={{marginLeft:100}}>
             <button onClick={resta}>-</button>
