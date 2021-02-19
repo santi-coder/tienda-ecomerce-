@@ -5,6 +5,7 @@ import NavbarComponent from './components/navBar/';
 import ItemListContainerComponent from './contenedor/itemListContainer/itemListContainer';
 import ItemDetailContainer from './contenedor/itemDetailContainer/itemDetailContainer';
 import {BrowserRouter, Switch, Route} from 'react-router-dom'; 
+import Categoria from './components/categorias/categoria';
 
 
 const App = () => {
@@ -22,6 +23,10 @@ const App = () => {
         
         <Route exact path="/">
           <ItemListContainerComponent curso="react " cantidad=" mucho"/>  
+	      </Route>
+
+        <Route exact path="/categoria/:catID">
+          <Categoria/>  
 	      </Route>
 
         <Route exact path="/detalle/:id">

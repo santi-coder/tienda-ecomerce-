@@ -1,6 +1,7 @@
 import React from 'react' 
 import productList from '../../components/mocks/productList' 
-import ItemList from './itemList'
+import ItemList from '../../components/itemList/itemList'
+
 
 const ItemListContainerComponent = (props) => {
 
