@@ -23,8 +23,6 @@ const Categoria = () => {
     )}, [catID]);
 
 
-    
-
     return(
         <div>
             {producto.map((product)=>{

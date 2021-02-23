@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ItemCountComponent = ({stock, agregarAlCarrito }) => {
+const ItemCountComponent = ({stock, agregarAlCarrito}) => {
     
   const [contador, setContador] = React.useState (1)
 
@@ -35,7 +35,7 @@ const ItemCountComponent = ({stock, agregarAlCarrito }) => {
             <button onClick={() => {sumar (stock)}}>+</button>
         </div>
         <div style={{marginLeft:50, marginTop:20}}>
-            <button onClick={agregarAlCarrito}> Agregar al Carrito </button>
+            <button onClick={handlerAgregarAlCarrito}> Agregar al Carrito </button>
         </div>
       </>
     )

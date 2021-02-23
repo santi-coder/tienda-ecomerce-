@@ -1,16 +1,26 @@
 import React from 'react';
 import "../../App.css"
 import ItemCountComponent from '../itemCount';
+import {Link} from 'react-router-dom';
+import {useContext} from 'react';
+import { CartContext } from '../context/CartContext';
+
 
 
 const ItemDetail = ({producto}) => {
     
     const [irCart, setIrCart] = React.useState(false)
 
+    const {addCart} = useContext(CartContext)
+
     const agregarAlCarrito = (contador) =>{
-        alert("se agrago el producto al carrito");
+        alert(`se agrego ${contador} productos al carrito`);
         setIrCart(true)
+        addCart({ producto:producto, quanity:contador})
+        
+    
     }
+    
 
     return (
         
@@ -30,7 +40,8 @@ const ItemDetail = ({producto}) => {
             </div>
             <div>
                
-               {irCart ? <button> ir al carrito</button> : <ItemCountComponent stock={5} agregarAlCarrito={agregarAlCarrito} />}
+
+               {irCart ? <Link to={"/carrito/"}><button> ir al carrito</button></Link> : <ItemCountComponent stock={5} agregarAlCarrito={agregarAlCarrito} />}
             
             </div>
         </div>
