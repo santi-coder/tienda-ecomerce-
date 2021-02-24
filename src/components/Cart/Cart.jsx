@@ -5,7 +5,7 @@ import { CartContext } from '../context/CartContext'
 const Cart = () => {
     
     const CartContextUse = useContext(CartContext)
-    console.log(CartContextUse);
+    // console.log(CartContextUse.productos);
     
     
     
