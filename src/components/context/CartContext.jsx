@@ -7,51 +7,26 @@ export const CartContext =  createContext ();
 const CartContextProvider = ({children}) => {
     
     const [productos, setProductos] = React.useState([])
-     
-    console.log(productos)
+    //  console.log(productos);
     
-    
-    React.useEffect(() => {
-
-    const existe = (item) => {
+     function addCart (item) {
         
-        const comprobExiste = productos.find(element=>element.productos.producto.id === item.producto.id);
-            //  si existe hace la comprobacion y da true ejecuta add to cart sino ejecutra otra funcion 
-        
-            if (comprobExiste) {
-                       console.log("ya esta en el carrito") 
-                    }else {
-                        console.log("lo voy a agregar");
-                        addCart()
-                    }
-        }
+        const comprobExiste = productos.find(element=>element.producto.id === item.producto.id);
+        // console.log(comprobExiste);
+        if (comprobExiste) {
+             console.log("ya esta en el carrito")
+            let indice = productos.indexOf(comprobExiste);
+            let nuevaCant = item.quanity + comprobExiste.quanity;
+            const copiaProd = [...productos];
+            copiaProd [indice].quanity = nuevaCant;
+            setProductos(copiaProd);
+            }else{
+            let sumoProd = [item, ...productos];
+            setProductos(sumoProd)
+        };
 
-        }, [item]);
-
-
-        //    const existe = productos.some (function(item){
-
-//         return productos.producto.id === item.producto.id; 
-//     })
-    
-    
-
-//     if (existe) {
-//        console.log("ya esta en el carrito") 
-//     }else {
-//         console.log("lo voy a agregar");
-//         addCart()
-//     }
-    
-    const addCart = (item) => {
-        const copiaProd = [...productos];
-        const todosLosProductos = [item, ...copiaProd];
-        setProductos (todosLosProductos);
     }
-    
-    
-    // existe()
-    
+
     return (
         
         <CartContext.Provider value={{
@@ -65,34 +40,3 @@ const CartContextProvider = ({children}) => {
 }
 
 export default CartContextProvider
-
-
-
-
-
-
-
-
-// const addCart = (item) =>{
-        
-//     const prodAAgregar = (item)
-    
-//     //   setProductos (item);
-//         //  console.log(prodAAgregar.producto.id)
-    
-
-//     const existe = productos.find(element=>element.productos.producto.id === prodAAgregar.producto.id);
-    
-//     if(existe === undefined){
-//         let todosLosProd = [item, ...productos ]
-//         setProductos(todosLosProd);
-        
-//     }
-//         // }else{
-//     //     console.log(existe)
-//     // }
-    
-// }
-
-// //  console.log(productos.producto.id);
-// // console.log(productos.quanity);

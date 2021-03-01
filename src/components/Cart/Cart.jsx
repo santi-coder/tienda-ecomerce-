@@ -4,18 +4,17 @@ import { CartContext } from '../context/CartContext'
 
 const Cart = () => {
     
-    const CartContextUse = useContext(CartContext)
-    // console.log(CartContextUse.productos);
+    const {productos} = useContext(CartContext)
+    console.log(productos);
     
+    let prod = productos.map(element=>element.producto.title)
+       
+  return (
+    <div>
+    <h4> {prod}</h4>
     
-    
-    
-    return (
-        <div>
-            <h1>soy el componente carrito vacio </h1>
-
-        </div>
-    )
-}
+</div>
+);
+};
 
 export default Cart
