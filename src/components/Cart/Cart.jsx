@@ -3,17 +3,45 @@ import { CartContext } from '../context/CartContext'
 
 
 const Cart = () => {
+  
+  const {productos} = useContext(CartContext)
+  
+    let prod = productos
     
-    const {productos} = useContext(CartContext)
-    console.log(productos);
+    let tablaProductos = document.getElementById('tabla');
+    let cuerpoTabla = document.createElement('tbody')
     
-    let prod = productos.map(element=>element.producto.title)
-       
+    prod.forEach(p => {
+      // console.log(p.producto.title);
+      let fila = document.createElement("tr");
+
+      let td = document.createElement("td");
+      td.innerText=p.producto.title;
+      fila.appendChild(td);
+
+      cuerpoTabla.appendChild(fila);
+      
+    });
+    
+    tablaProductos.appendChild(cuerpoTabla)
+    
+  
+
   return (
+    <>
     <div>
-    <h4> {prod}</h4>
+      <table id= 'tabla'>
+        <tr>
+          <th>nombre</th>
+          <th>cantidad</th>
+          <th>precio</th>
+        </tr>
+      </table>
+
+      {/* <h4> {prod}</h4> */}
     
-</div>
+    </div>
+    </>
 );
 };
 

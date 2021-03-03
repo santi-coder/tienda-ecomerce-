@@ -1,6 +1,7 @@
 import React from 'react' 
 import productList from '../../components/mocks/productList' 
 import ItemList from '../../components/itemList/itemList'
+import { getFirestore } from '../../Firebase';
 
 
 const ItemListContainerComponent = (props) => {
@@ -17,6 +18,21 @@ React.useEffect(() =>{
     myPromise.then ((result)=> setProducts (result));
 
 }, []);
+
+//implemento firebase 
+
+React.useEffect(() =>{
+    const baseDeDatos = getFirestore();
+    const itemCollection = baseDeDatos.collection('items');
+    itemCollection.get().then((value) => {
+        value.docs.map(element => {console.log(element.data())})
+    })
+}, [])
+
+
+
+
+
 
 
     return (
