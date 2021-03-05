@@ -25,13 +25,13 @@ const ItemDetailContainer = () => {
 
     //implemento firebase 
 
-React.useEffect(() =>{
-    const baseDeDatos = getFirestore();
-    const itemCollection = baseDeDatos.collection('items');
-    itemCollection.get().then((value) => {
-        value.docs.map(element => {console.log(element.data())})
-    })
-}, [])
+// React.useEffect(() =>{
+//     const baseDeDatos = getFirestore();
+//     const itemCollection = baseDeDatos.collection('items');
+//     itemCollection.get().then((value) => {
+//         value.docs.map(element => {console.log(element.data())})
+//     })
+// }, [])
   
     return <ItemDetail producto={producto} />
     
