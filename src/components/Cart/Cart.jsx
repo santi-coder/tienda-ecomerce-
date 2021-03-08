@@ -1,20 +1,42 @@
 import {useContext} from 'react'
 import ReactDOM from 'react-dom';
 import { CartContext } from '../context/CartContext'
+import React from 'react'
 
 
 const Cart = () => {
   
-  // const {productos} = useContext(CartContext)
+  const {productos} = useContext(CartContext)
   
-    // let prod = productos
+    let prod = productos
 
     
+   
 
-    let tablaProductos = document.getElementById ('tabla')
-    let element = <th>santiago</th>;
-    ReactDOM.render(element, tablaProductos);
+React.useEffect(() => {
+  
+  prod.forEach(p => {
+     console.log( p.producto.title)
+    
+  
+  let tablaProductos = document.getElementById ('tabla')
+  
+  let row = 
+            <tr>
+              <th>{p.producto.title}</th>
+              <th>{p.producto.title}</th>
+              <th>{p.producto.title}</th>  
+            </tr> 
+                      
+  
+  ReactDOM.render(row, tablaProductos);
+});
 
+}, [])
+
+     
+    
+    
 
 
     
@@ -50,25 +72,19 @@ const Cart = () => {
             <th>cantidad</th>
           </tr>
         </thead>
-        <tbody>
-          <tr id= 'tabla'>
-          
-            
+        <tbody id= 'tabla' >
 
-          </tr>
-          
         </tbody>
       </table>
 
-      {/* <h4> {prod}</h4> */}
+     
     
     </div>
    
     </>
     
 );
-
-
+                        
 };
 
 export default Cart

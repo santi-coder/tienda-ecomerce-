@@ -10,29 +10,34 @@ const ItemDetailContainer = () => {
     
     const {id} = useParams ()
 
-    React.useEffect(() => {
-        const detailPromise= new Promise ((resolve, reject)=>{
-            setTimeout(()=> resolve(productList),3000);
-        });
+    // React.useEffect(() => {
+    //     const detailPromise= new Promise ((resolve, reject)=>{
+    //         setTimeout(()=> resolve(productList),3000);
+    //     });
 
-        detailPromise.then (function (result) { 
-            const unProducto = result.find (element => element.id.toString() === id);
-            setProducto (unProducto)
-        }
-    )}, []);
+    //     detailPromise.then (function (result) { 
+    //         const unProducto = result.find (element => element.id.toString() === id);
+    //         setProducto (unProducto)
+    //     }
+    // )}, []);
+
+
+React.useEffect(() =>{
+    const baseDeDatos = getFirestore();
+    const itemCollection = baseDeDatos.collection('items');
+    const item = itemCollection.doc(id); 
+    
+    item.get().then((value) => {
+    let detail = value.data()
+     console.log(detail);
+     setProducto(detail)
+    
+    });
+
+}, [])
 
 
 
-    //implemento firebase 
-
-// React.useEffect(() =>{
-//     const baseDeDatos = getFirestore();
-//     const itemCollection = baseDeDatos.collection('items');
-//     itemCollection.get().then((value) => {
-//         value.docs.map(element => {console.log(element.data())})
-//     })
-// }, [])
-  
     return <ItemDetail producto={producto} />
     
 }
