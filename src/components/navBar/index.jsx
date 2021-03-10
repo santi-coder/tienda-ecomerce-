@@ -9,22 +9,22 @@ const NavbarComponent = () => {
         <Link to={`/`}> <img src="/images/logo512.png" alt="" style={{width:80, height:80}}/> </Link>
         <ul style={{listStyle:"none", marginLeft:1000}}>
           <li>
-            <Link to={`/categoria/A`}> Remera</Link>
+            <Link to={`/categoria/remeras`}> Remera</Link>
           </li>
           <li>
-            <Link to={`/categoria/B`}> Pantalon </Link>
+            <Link to={`/categoria/pantalon`}> Pantalon </Link>
           </li>
           <li>
-          <Link to={`/categoria/C`}> Buzo </Link>
+          <Link to={`/categoria/buzos`}> Buzo </Link>
           </li>
           <li>
-          <Link to={`/categoria/D`}> Medias </Link>
+          <Link to={`/categoria/medias`}> Medias </Link>
           </li>
           <li>
-          <Link to={`/categoria/E`}> Campera </Link>
+          <Link to={`/categoria/camperas`}> Campera </Link>
           </li>
           <li>
-          <Link to={`/categoria/F`}> Gorro </Link>
+          <Link to={`/categoria/gorro`}> Gorro </Link>
           </li>
           
         </ul>

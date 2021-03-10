@@ -1,5 +1,4 @@
-import React from 'react' 
-import productList from '../../components/mocks/productList' 
+import React from 'react'  
 import ItemList from '../../components/itemList/itemList'
 import { getFirestore } from '../../Firebase';
 
@@ -9,8 +8,8 @@ const ItemListContainerComponent = (props) => {
 //     /*Desafio clase 6*/
 
     const [products, setProducts] = React.useState([]);    
-   
     // console.log(products);
+    
 // React.useEffect(() =>{
 //     const myPromise= new Promise((resolve, reject) => {
 //         setTimeout(()=> resolve(productList), 2000);
@@ -26,12 +25,12 @@ const ItemListContainerComponent = (props) => {
 React.useEffect(() =>{
     const baseDeDatos = getFirestore();
     const itemCollection = baseDeDatos.collection('items');
+    
     itemCollection.get().then((value) => {
-    let bd = value.docs.map(element => { 
-        return element.data()
-    })
-    // console.log(bd);
-    setProducts(bd)
+    setProducts ( value.docs.map(element => ({ 
+        id:element.id, ...element.data()
+    })))
+    // console.log(products)
     });
     
 }, [])

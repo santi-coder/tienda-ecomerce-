@@ -1,7 +1,6 @@
 import React from 'react'
 import ItemDetail from '../../components/itemDetail/itemDetail';
-import productList from '../../components/mocks/productList';
-import {useParams} from 'react-router-dom'
+import {useParams} from 'react-router-dom';
 import { getFirestore } from '../../Firebase';
 
 const ItemDetailContainer = () => {
@@ -28,10 +27,7 @@ React.useEffect(() =>{
     const item = itemCollection.doc(id); 
     
     item.get().then((value) => {
-    let detail = value.data()
-     console.log(detail);
-     setProducto(detail)
-    
+    setProducto({id: value.id, ...value.data()})
     });
 
 }, [])
