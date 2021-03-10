@@ -27,11 +27,20 @@ const CartContextProvider = ({children}) => {
 
     }
 
+    function eliminarUnItem (item) {
+        // console.log(item)
+        // let copiaProdB = [...productos];
+        const nuevoArreglo = productos.filter(element => element.producto.id !== item)
+        console.log(nuevoArreglo);
+        setProductos(nuevoArreglo)
+         
+    }
+
     return (
         
         <CartContext.Provider value={{
             
-            productos, addCart }}>
+            productos, addCart, eliminarUnItem }}>
                 
             {children}
         </CartContext.Provider>

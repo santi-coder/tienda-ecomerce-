@@ -6,7 +6,7 @@ import React from 'react'
 
 const Cart = () => {
   
-  const {productos} = useContext(CartContext)
+  const {productos, eliminarUnItem, prodAEliminar} = useContext(CartContext)
   
   console.log(productos);
     
@@ -79,7 +79,7 @@ const Cart = () => {
             <th> { valor.producto.title } </th>
             <th> { valor.producto.price }</th>
             <th> { valor.quanity }</th> 
-            <th><button>x</button></th>                 
+            <th><button onClick={() => {eliminarUnItem (valor.producto.id)}}>x</button></th>                 
           </tr>                 
         ) ) }
 
