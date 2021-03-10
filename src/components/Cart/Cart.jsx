@@ -8,31 +8,30 @@ const Cart = () => {
   
   const {productos} = useContext(CartContext)
   
-    let prod = productos
-
+  console.log(productos);
     
    
 
-React.useEffect(() => {
+// React.useEffect(() => {
   
-  prod.forEach(p => {
-     console.log( p.producto.title)
+//   prod.forEach(p => {
+//      console.log( p.producto.title)
     
   
-  let tablaProductos = document.getElementById ('tabla')
+//   let tablaProductos = document.getElementById ('tabla')
   
-  let row = 
-            <tr>
-              <th>{p.producto.title}</th>
-              <th>{p.producto.title}</th>
-              <th>{p.producto.title}</th>  
-            </tr> 
+//   let row = 
+//             <tr>
+//               <th>{p.producto.title}</th>
+//               <th>{p.producto.title}</th>
+//               <th>{p.producto.title}</th>  
+//             </tr> 
                       
   
-  ReactDOM.render(row, tablaProductos);
-});
+//   ReactDOM.render(row, tablaProductos);
+// });
 
-}, [])
+// }, [])
 
      
     
@@ -62,19 +61,33 @@ React.useEffect(() => {
   return (
     
     <>
-   
+    
     <div>
       <table>
         <thead>
           <tr>
+            <th>producto</th>
             <th>precio</th>
-            <th>nombre</th>
             <th>cantidad</th>
+            <th>eliminar</th>
           </tr>
         </thead>
-        <tbody id= 'tabla' >
+        <tbody>
+            
+        {productos.map (valor => ( 
+          <tr>                   
+            <th> { valor.producto.title } </th>
+            <th> { valor.producto.price }</th>
+            <th> { valor.quanity }</th> 
+            <th><button>x</button></th>                 
+          </tr>                 
+        ) ) }
 
         </tbody>
+        <tfoot>
+              <p>total:</p> 
+              <button>vaciar carrito</button>
+        </tfoot>
       </table>
 
      
