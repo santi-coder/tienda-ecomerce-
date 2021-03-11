@@ -33,14 +33,24 @@ const CartContextProvider = ({children}) => {
         const nuevoArreglo = productos.filter(element => element.producto.id !== item)
         console.log(nuevoArreglo);
         setProductos(nuevoArreglo)
-         
     }
+
+    function vaciarCarrito () {
+        
+        return setProductos([])
+    }
+
+    
 
     return (
         
         <CartContext.Provider value={{
             
-            productos, addCart, eliminarUnItem }}>
+            productos, 
+            addCart, 
+            eliminarUnItem,
+            vaciarCarrito
+             }}>
                 
             {children}
         </CartContext.Provider>
