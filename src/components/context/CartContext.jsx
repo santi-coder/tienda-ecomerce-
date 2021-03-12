@@ -40,8 +40,16 @@ const CartContextProvider = ({children}) => {
         return setProductos([])
     }
 
-    
+    //cantidad de items cartwidget
 
+    let cantidadCart = productos.map (valor => (valor.quanity)) 
+    let  total = 0 
+     for(let i = 0 ; i<cantidadCart.length; i++)
+     {
+    total += cantidadCart[i];
+    }
+// console.log(total);
+    
     return (
         
         <CartContext.Provider value={{
@@ -49,7 +57,9 @@ const CartContextProvider = ({children}) => {
             productos, 
             addCart, 
             eliminarUnItem,
-            vaciarCarrito
+            vaciarCarrito,
+            total
+
              }}>
                 
             {children}

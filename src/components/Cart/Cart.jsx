@@ -2,13 +2,20 @@ import {useContext} from 'react'
 import ReactDOM from 'react-dom';
 import { CartContext } from '../context/CartContext'
 import React from 'react'
+import { getFirestore } from '../../Firebase';
 
 
 const Cart = () => {
   
+  // corregir
+  
+  const [nombre, setNombre] = React.useState("")
+  const [email, setEmail] = React.useState("")
+  const [telefono, setTelefono] = React.useState("")
+  
   const {productos, eliminarUnItem, vaciarCarrito} = useContext(CartContext)
   
-  console.log(productos);
+  // console.log(productos);
   let subTotal = productos.map (valor => (valor.quanity*valor.producto.price)) 
   let  total = 0 
   for(let i = 0 ; i<subTotal.length; i++)
@@ -16,6 +23,22 @@ const Cart = () => {
     total += subTotal[i];
   }
   
+  
+  
+  
+  const finalizarCompra = () => {
+    console.log(productos)
+    
+      let nuevaOrden = {clientes: {name:nombre, email:email, telefono:telefono}, items: [...productos], total:total}
+      
+      const fbd = getFirestore()
+      const coleccionDeOrdenes = fbd.collection("ordenes");
+      coleccionDeOrdenes.add(nuevaOrden).then((value) =>{
+        alert(`gracias por tu compra, tu numero de orden es ${value.id}`)
+        
+      })
+    
+  }
   
   
   return (
@@ -52,9 +75,16 @@ const Cart = () => {
           </tr>
           <tr>
               <th><button onClick={vaciarCarrito}>vaciar carrito</button></th>
+              <th><button onClick={ () => { finalizarCompra() }}>finalizar compra</button></th>
           </tr>    
         </tfoot>
       </table>
+      <div>
+        <input type="text" placeholder="nombre" onChange={(e)=>{setNombre(e.target.value)}}/>
+        <input type="text" placeholder="email" onChange={(e)=>{setEmail(e.target.value)}}/>
+        <input type="text" placeholder="telefono" onChange={(e)=>{setTelefono(e.target.value)}}/>
+      </div>
+
 
      
     
