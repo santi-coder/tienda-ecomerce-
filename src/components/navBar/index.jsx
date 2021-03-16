@@ -5,33 +5,41 @@ import {Link} from 'react-router-dom';
 const NavbarComponent = () => {
   return (
       <>
-      <nav style={{backgroundColor:"green"}}>
-        <Link to={`/`}> <img src="/images/logo512.png" alt="" style={{width:80, height:80}}/> </Link>
-        <ul style={{listStyle:"none", marginLeft:1000}}>
-          <li>
-            <Link to={`/categoria/remeras`}> Remera</Link>
-          </li>
-          <li>
-            <Link to={`/categoria/pantalon`}> Pantalon </Link>
-          </li>
-          <li>
-          <Link to={`/categoria/buzos`}> Buzo </Link>
-          </li>
-          <li>
-          <Link to={`/categoria/medias`}> Medias </Link>
-          </li>
-          <li>
-          <Link to={`/categoria/camperas`}> Campera </Link>
-          </li>
-          <li>
-          <Link to={`/categoria/gorro`}> Gorro </Link>
-          </li>
-          
-        </ul>
-        <div style={{float:"right"}}>
-        <CartWidget/>
+      <nav className="navBarComponent">
+        <div>
+          <Link to={`/`}> <img src="/images/img-2.png" alt="logo" className="logo" /> </Link>
+        </div>
+        <div className="listCategoria">
+          <ul>
+            <li>
+              <Link to={`/categoria/remeras`}> <p>Remera</p></Link>
+            </li>
+            <li>
+              <Link to={`/categoria/pantalon`}><p> Pantalon </p></Link>
+            </li>
+            <li>
+            <Link to={`/categoria/buzos`}><p> Buzo </p></Link>
+            </li>
+            <li>
+            <Link to={`/categoria/medias`}><p> Medias </p></Link>
+            </li>
+            <li>
+            <Link to={`/categoria/camperas`}><p> Campera </p></Link>
+            </li>
+            <li>
+            <Link to={`/categoria/gorro`}><p> Gorro </p></Link>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <CartWidget/>
         </div>  
       </nav>
+      <div className="contenedorTitle">
+        <div className="title" >
+          <h1>nambio</h1>
+        </div>  
+      </div>
       </>
     
   );

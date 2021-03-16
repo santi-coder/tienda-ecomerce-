@@ -8,8 +8,8 @@ const CartWidget = () => {
 
     return (
         <div>
-           <Link to = {'/carrito/'}> <img src="/images/carroDeCompras.png" alt="" style={{width:80, height:80, float:"right"}}/></Link>
-            <h4>{total}</h4>
+           <Link to = {'/carrito/'}> <img src="/images/carroDeCompras.png" alt="imagen carrito" className="imgCart" /></Link>
+            <h4 className="contadorCarrito">{total}</h4>
         </div>
     )
 }

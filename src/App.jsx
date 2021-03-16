@@ -8,6 +8,7 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Categoria from './components/categorias/categoria';
 import CartContextProvider from './components/context/CartContext';
 import Cart from './components/Cart/Cart';
+import Footer from './components/Footer/footer';
 
 
 
@@ -26,7 +27,7 @@ const App = () => {
       <Switch>
         
         <Route exact path="/">
-          <ItemListContainerComponent curso="react " cantidad=" mucho"/>  
+          <ItemListContainerComponent/>  
 	      </Route>
 
         <Route exact path="/categoria/:catID">
@@ -43,7 +44,7 @@ const App = () => {
 
       </Switch>
 
-      <footer> <h1> hola soy el footer </h1> </footer>    
+      <Footer/>   
     
     </BrowserRouter>
 
