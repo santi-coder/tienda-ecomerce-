@@ -7,13 +7,21 @@ const Item = ({product}) => {
     
     return (
         <>
-        <div className="listaProductos">
-            <h3>{product.title}</h3>
-            <p>Color: {product.color}</p>
-            <p>Precio: $ {product.price}</p>
-            <img src={product.foto} style={{width:40, height:40}}></img>
-            <Link to={`/detalle/${product.id}`}> <button> Ver detalle de producto </button> </Link>  
+    
+        <div className="item">
+                <h4>{product.title}</h4>
+            <div className="imgItem">
+                <img src={product.foto}></img>
+            </div>
+            <div className="textosCards">
+                <p>Color: {product.color}</p>
+                <h5>Precio: $ {product.price}</h5>
+            </div>
+            <div className="btn">
+                <Link to={`/detalle/${product.id}`}> <button> Ver mas </button> </Link>
+            </div>  
         </div>
+    
         </>
     
     )

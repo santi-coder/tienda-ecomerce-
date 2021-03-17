@@ -25,7 +25,7 @@ const Categoria = () => {
 
 
     return(
-        <div>
+        <div className="categorias">
             {producto.map((product)=>{
                 return(
                     <>

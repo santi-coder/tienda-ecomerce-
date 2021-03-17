@@ -27,16 +27,16 @@ const ItemCountComponent = ({stock, agregarAlCarrito}) => {
   
  return (
       <>
-        <div style={{marginLeft:100}}>
-            <button onClick={resta}>-</button>
-            <br/>
+    <div className="contenedoBotones">
+        <div>
+            <button onClick={resta} className="countBotones">-</button>
             <b>{contador}</b>
-            <br/>
-            <button onClick={() => {sumar (stock)}}>+</button>
+            <button onClick={() => {sumar (stock)}} className="countBotones">+</button>
         </div>
-        <div style={{marginLeft:50, marginTop:20}}>
-            <button onClick={handlerAgregarAlCarrito}> Agregar al Carrito </button>
+        <div>
+            <button onClick={handlerAgregarAlCarrito} className="btnAgregar"> Agregar al Carrito </button>
         </div>
+    </div> 
       </>
     )
 }

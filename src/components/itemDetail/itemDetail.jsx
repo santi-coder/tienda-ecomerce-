@@ -24,28 +24,25 @@ const ItemDetail = ({producto}) => {
 
     return (
         
-        <div className="contenedorDetalle">
-            <div className="imagen">
+        <div className="detalleProducto">
+            <div className="imagenDetalle">
                 <img src={producto.foto}></img>
             </div>
-            <div className="infoProd">
-                <h1>Producto: {producto.title} </h1>
-                <p>Colores disponibles: {producto.color}</p>
-                <p>Caracteristicas / Materiales: {producto.caracDelProducto}</p>
-                <p>Tiempo de entrega: {producto.envio}</p>
-                <p>Reputacion del vendedor: {producto.repDelVendedor}</p>
-                <p>Forma de pago: {producto.formaDePago}</p>
-                <h3>Precio: $ {producto.price}</h3>
-                
-            </div>
-            <div>
-               
-
-               {irCart ? <Link to={"/carrito/"}><button> ir al carrito</button></Link> : <ItemCountComponent stock={5} agregarAlCarrito={agregarAlCarrito} />}
-            
+            <div className="contenedorText-btn">
+                <div className="textProd">
+                    <h3>Producto: {producto.title} </h3>
+                    <p>Colores disponibles: {producto.color}</p>
+                    <p>Caracteristicas / Materiales: {producto.caracDelProducto}</p>
+                    <p>Tiempo de entrega: {producto.envio}</p>
+                    <p>Reputacion del vendedor: {producto.repDelVendedor}</p>
+                    <p>Forma de pago: {producto.formaDePago}</p>
+                    <h5>Precio: $ {producto.price}</h5>
+                </div>
+                <div className="btnComprar">
+                     {irCart ? <Link to={"/carrito/"}><button className="btnIrCarrito"> ir al carrito</button></Link> : <ItemCountComponent stock={5} agregarAlCarrito={agregarAlCarrito} />}
+                </div>
             </div>
         </div>
-        
     );
 };
 

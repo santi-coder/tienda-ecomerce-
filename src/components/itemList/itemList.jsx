@@ -4,7 +4,7 @@ import ItemCountComponent from "../itemCount";
 const ItemList =({products}) => {
       
     return (
-    <div>
+    <div className="contenedorItems">
         
             {products.map((product)=>{
                 return ( 
