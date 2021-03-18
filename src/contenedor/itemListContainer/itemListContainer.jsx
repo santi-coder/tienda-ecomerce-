@@ -5,22 +5,8 @@ import { getFirestore } from '../../Firebase';
 
 const ItemListContainerComponent = (props) => {
 
-//     /*Desafio clase 6*/
-
     const [products, setProducts] = React.useState([]);    
-    // console.log(products);
-    
-// React.useEffect(() =>{
-//     const myPromise= new Promise((resolve, reject) => {
-//         setTimeout(()=> resolve(productList), 2000);
-//     });
 
-//     myPromise.then ((result)=> setProducts (result));
-        
-// }, []);
-
-
-// implemento firebase 
 
 React.useEffect(() =>{
     const baseDeDatos = getFirestore();
@@ -35,13 +21,8 @@ React.useEffect(() =>{
     
 }, [])
 
-
 return (
-        
-            
-     <ItemList products={products} />   
-            
-        
+         <ItemList products={products} />   
     )
 }
 

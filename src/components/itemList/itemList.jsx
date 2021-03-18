@@ -1,5 +1,5 @@
 import Item from "../item/item";
-import ItemCountComponent from "../itemCount";
+
 
 const ItemList =({products}) => {
       

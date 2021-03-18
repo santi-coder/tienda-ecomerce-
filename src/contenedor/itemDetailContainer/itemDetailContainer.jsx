@@ -9,18 +9,6 @@ const ItemDetailContainer = () => {
     
     const {id} = useParams ()
 
-    // React.useEffect(() => {
-    //     const detailPromise= new Promise ((resolve, reject)=>{
-    //         setTimeout(()=> resolve(productList),3000);
-    //     });
-
-    //     detailPromise.then (function (result) { 
-    //         const unProducto = result.find (element => element.id.toString() === id);
-    //         setProducto (unProducto)
-    //     }
-    // )}, []);
-
-
 React.useEffect(() =>{
     const baseDeDatos = getFirestore();
     const itemCollection = baseDeDatos.collection('items');
@@ -32,10 +20,7 @@ React.useEffect(() =>{
 
 }, [])
 
-
-
     return <ItemDetail producto={producto} />
-    
 }
 
 export default ItemDetailContainer

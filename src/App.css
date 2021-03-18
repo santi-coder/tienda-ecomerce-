@@ -216,3 +216,102 @@ footer p {
   right: 105px;
 }
 
+/* estilos cart */
+
+.contenedorCart{
+  margin-left: 80px;
+  margin-right: 80px;
+	margin-top: 20px;
+	height: 400px;
+	box-shadow: 0 0 6px 0 rgba(122, 187, 86, 0.5);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.inputText{
+  width: 300px;
+  background-color: #BE9B53;
+  margin: 5px;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.inputText h5 {
+  text-align: center;
+  margin-top:10px;
+}
+.input{
+  margin-bottom: 50px;
+}
+.input h6 {
+  margin: 8px;
+}
+.btnFinal{
+  margin-bottom: 6px;
+}
+
+
+.carrito{
+  width:100% ;
+  height: 100vh;
+  margin: 5px;
+  border-radius: 3px;
+}
+.carrito thead tr {
+  height: 35px;
+  border-radius: 3px;
+  font-size: 15px;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  background-color: #BE9B53;
+  padding-top: 5px;
+}
+
+.carrito tfoot tr {
+  height: 35px;
+  width: 950px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 10px;
+  padding-left: 10px;
+  background-color: #BE9B53;
+  position: fixed;
+  top:551px;
+  border-radius:3px;
+}
+.insertarProd {
+  background-color: #BE9B53;
+  height: 35px;
+  font-size: 15px;
+  margin-top: 5px;
+  display: flex;
+  justify-content:space-between;
+  padding-top: 5px;
+  padding-left: 5px;
+}
+.th1{
+  width:250px;
+  height: 35px ;
+  margin-top: 2px ;
+  padding-left: 2px;
+  padding-right: 5px;
+  
+} 
+.th2{
+  width: 50px;
+  margin-left:1px;
+  padding-left: 1px;
+  position: absolute;
+  left: 360px;
+}
+.th3{
+  margin-right: 50px;
+}
+.th4{
+  margin-left: 50px;
+}

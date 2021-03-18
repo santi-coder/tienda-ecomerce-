@@ -1,5 +1,4 @@
 import {useContext} from 'react'
-import ReactDOM from 'react-dom';
 import { CartContext } from '../context/CartContext'
 import React from 'react'
 import { getFirestore } from '../../Firebase';
@@ -23,9 +22,6 @@ const Cart = () => {
     total += subTotal[i];
   }
   
-  
-  
-  
   const finalizarCompra = () => {
     console.log(productos)
     
@@ -37,111 +33,59 @@ const Cart = () => {
         alert(`gracias por tu compra, tu numero de orden es ${value.id}`)
         
       })
+ }
+ return (
     
-  }
-  
-  
-  return (
-    
-    <>
-    
-    <div>
-      <table>
+  <>
+    <div className="contenedorCart">
+      <table className="carrito">
         <thead>
           <tr>
-            <th>producto</th>
-            <th>precio</th>
-            <th>cantidad</th>
-            <th>subtotal</th>
-            <th>eliminar</th>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Subtotal</th>
+            <th>Eliminar</th>
           </tr>
         </thead>
         <tbody>
-            
+          <div className="scroll">
         {productos.map (valor => ( 
-          <tr>                   
-            <th> { valor.producto.title } </th>
-            <th> { valor.producto.price }</th>
-            <th> { valor.quanity }</th>
+          <tr className="insertarProd">                   
+            <th className="th1"> { valor.producto.title } </th>
+            <th className="th2"> { valor.producto.price }</th>
+            <th className="th4"> { valor.quanity }</th>
             <th> {(valor.quanity*valor.producto.price)}</th> 
-            <th><button onClick={() => {eliminarUnItem (valor.producto.id)}}>x</button></th>                 
+            <th className="th3"><button onClick={() => {eliminarUnItem (valor.producto.id)}} className="countBotones">x</button></th>                 
           </tr>                 
         ) ) }
-
+        </div>
         </tbody>
         <tfoot>
           <tr>
               <th>total: $ {total}</th> 
-          </tr>
-          <tr>
-              <th><button onClick={vaciarCarrito}>vaciar carrito</button></th>
-              <th><button onClick={ () => { finalizarCompra() }}>finalizar compra</button></th>
+              <th><button onClick={vaciarCarrito} className="btnAgregar">vaciar carrito</button></th>
           </tr>    
         </tfoot>
       </table>
-      <div>
-        <input type="text" placeholder="nombre" onChange={(e)=>{setNombre(e.target.value)}}/>
-        <input type="text" placeholder="email" onChange={(e)=>{setEmail(e.target.value)}}/>
-        <input type="text" placeholder="telefono" onChange={(e)=>{setTelefono(e.target.value)}}/>
+      <div className="inputText">
+          <h5> Por favor ingrese sus datos para finalizar la compra </h5>
+        <div className="input">
+          <h6>ingresa tu nombre</h6>
+          <input type="text" placeholder="nombre" onChange={(e)=>{setNombre(e.target.value)}}/>
+          <h6>ingresa tu email</h6>
+          <input type="text" placeholder="email" onChange={(e)=>{setEmail(e.target.value)}}/>
+          <h6>ingresa tu telefono</h6>
+          <input type="text" placeholder="telefono" onChange={(e)=>{setTelefono(e.target.value)}}/>
+        </div>
+        <div className="btnFinal">
+          <th><button onClick={ () => { finalizarCompra() }} className="btnAgregar">finalizar compra</button></th>
+        </div>
       </div>
-
-
-     
-    
     </div>
-   
-    </>
-    
+  </>
 );
-                        
 };
 
 export default Cart
-
-
-
-
-// React.useEffect(() => {
-  
-//   prod.forEach(p => {
-//      console.log( p.producto.title)
-    
-  
-//   let tablaProductos = document.getElementById ('tabla')
-  
-//   let row = 
-//             <tr>
-//               <th>{p.producto.title}</th>
-//               <th>{p.producto.title}</th>
-//               <th>{p.producto.title}</th>  
-//             </tr> 
-                      
-  
-//   ReactDOM.render(row, tablaProductos);
-// });
-
-// }, [])
-
-     
-    
-    
-
-
-    
-    // let tablaProductos = document.getElementsByClassName('tabla');
-    // let cuerpoTabla = document.createElement('tbody')
-    
-    // prod.forEach(p => {
-    //   // console.log(p.producto.title);
-    //   let fila = document.createElement("tr");
-
-    //   let td = document.createElement("td");
-    //   td.innerText=p.producto.title;
-    //   fila.appendChild(td);
-
-    //   cuerpoTabla.appendChild(fila);
-      
-    // });
-    
-    // tablaProductos.appendChild(cuerpoTabla)
     

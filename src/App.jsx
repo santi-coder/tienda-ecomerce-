@@ -10,11 +10,7 @@ import CartContextProvider from './components/context/CartContext';
 import Cart from './components/Cart/Cart';
 import Footer from './components/Footer/footer';
 
-
-
 const App = () => {
- 
- 
  
   return (
     

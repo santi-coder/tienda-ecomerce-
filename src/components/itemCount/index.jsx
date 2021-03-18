@@ -11,16 +11,13 @@ const ItemCountComponent = ({stock, agregarAlCarrito}) => {
 
         }
     }
-
     const resta = () =>{
         if (contador > 1){
             setContador (contador - 1);
         }else {
             console.log("no podemos vender productos negativos")
         }
-
     }
-
    const handlerAgregarAlCarrito = () =>{
     agregarAlCarrito(contador);
    }
